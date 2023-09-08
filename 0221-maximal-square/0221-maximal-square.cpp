@@ -22,17 +22,17 @@ public:
             }
         }
 
-        for(int k=1; k<=min(m,n); k++){
+        for(int k=min(m,n); k>=1; k--){
             for(int i=k; i<=m; i++){
                 for(int j=k; j<=n; j++){
                     int x = dp[i][j] - ( dp[i-k][j] + dp[i][j-k] - dp[i-k][j-k] );
                     if(k*k == x){
-                        ans = x;
+                        return x;
                     }
                 }
             }
         }
 
-        return ans;
+        return 0;
     }
 };
