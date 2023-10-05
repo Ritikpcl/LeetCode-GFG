@@ -20,7 +20,7 @@ public:
 
         if(countNum1 > n/3) ans.push_back(num1);
         if(countNum2 > n/3) ans.push_back(num2);
-
+        cout<<countNum1<<endl;
         return ans;
     }
 };
