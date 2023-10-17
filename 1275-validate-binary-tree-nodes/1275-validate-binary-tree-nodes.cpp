@@ -14,8 +14,8 @@ public:
         for(int i=0; i<n; i++){
             if(leftChild[i] != -1){
                 int p_i = find_parent(parent,i);
-                if(parent[leftChild[i]] != leftChild[i]) return false;
-                if(p_i == leftChild[i]) return false;
+                if(parent[leftChild[i]] != leftChild[i]) return false; //check for multiple parents
+                if(p_i == leftChild[i]) return false; //check for cycle
                 parent[leftChild[i]] = p_i;
             }
 
@@ -29,7 +29,7 @@ public:
         
         int cnt = 0;
         for(int i=0; i<n; i++){
-            if(parent[i] == i) cnt++;
+            if(parent[i] == i) cnt++; //check for two separate binary trees i.e. two roots exist
         }
 
         return cnt == 1;
